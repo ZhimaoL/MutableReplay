@@ -1,0 +1,108 @@
+/* Use binary search 
+ * Case1: num[i-1] < num[i] > num[i + 1], num[i] is a  peak exist 
+ * Case2: num[i-1] > num[i] > num[i + 1], a peak exist between num[0] and num[i - 1] 
+ * Case3: num[i-1] < num[i] < num[i + 1], a peak exist between num[i+1] and num[n] 
+ * Case4: num[i-1] > num[i] < num[i + 1], a peak exist in both sides
+ */
+import java.util.*; // Stack 
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.Date;
+import java.security.Timestamp;
+import java.security.cert.CertPath;
+import java.text.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Date;
+
+
+public class Solution 
+{
+	List<Integer> list;
+
+	public void trapRandom(){
+        Random rnd = new Random();
+		int iRand ;
+		int iSeed ;
+		long lRand;
+		double dRand;
+		int iLowerBound, iUpperBound;
+		long lLowerBound, lUpperBound;
+		double dLowerBound, dUpperBound;
+		
+		iSeed = 5;
+		iRand = rnd.nextInt(iSeed);
+		System.out.println("1st random num parameter: " + iSeed + " @@@ Solution.java");
+		System.out.println("1st random num: " + iRand + " @@@ Solution.java");
+		System.out.println(" ");
+		
+		iLowerBound = 10;
+		iUpperBound = 12345;
+		iRand = ThreadLocalRandom.current().nextInt(iLowerBound, iUpperBound);
+		System.out.println("2nd random num parameter 0: " + iLowerBound + " @@@ Solution.java");
+		System.out.println("2nd random num parameter 1: " + iUpperBound + " @@@ Solution.java");
+		System.out.println("2nd random num: " + iRand + " @@@ Solution.java");
+		System.out.println(" ");
+
+		lLowerBound = 1230000000;
+		lUpperBound = 1234567891;
+		lRand = ThreadLocalRandom.current().nextLong(lLowerBound, lUpperBound);
+		System.out.println("3rd random num parameter 0: " + lLowerBound + " @@@ Solution.java");
+		System.out.println("3rd random num parameter 1: " + lUpperBound + " @@@ Solution.java");
+		System.out.println("3rd random num: " + lRand + " @@@ Solution.java");
+		System.out.println(" ");
+	
+		dLowerBound = 23.678;	
+		dUpperBound = 123.678;	
+		dRand = ThreadLocalRandom.current().nextDouble(dLowerBound, dUpperBound);
+		System.out.println("4th random num parameter 0: " + dLowerBound + " @@@ Solution.java");
+		System.out.println("4th random num parameter 1: " + dUpperBound + " @@@ Solution.java");
+		System.out.println("4th random num is: " + dRand + " @@@ Solution.java");
+		System.out.println(" ");
+		//if (x < 12.67) {
+			list.add(0);
+		//}
+	}
+
+	public void trapTime(){
+		long start;
+
+		start = System.currentTimeMillis();
+		
+		System.out.println("start: " + start);
+
+		if((start % 2) == 0){
+			list.add(0);
+		}
+	}
+	
+	public void trapObject(){
+	    List<String> list = new ArrayList<>();
+   		
+		list.add("abc.txt");
+      
+   		// create the process builder
+   		ProcessBuilder pb = new ProcessBuilder(list);
+      
+   		// get the command list
+   	    pb.command(list);
+
+        System.out.println(pb.command());
+        List<Integer> l = null;
+        l.add(123);
+        
+	}
+
+	public static void main(String[] args){
+		Solution sol = new Solution();
+ 		//DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
+		//Date date = new Date();
+		
+		//System.out.println(date.getTime());
+		//System.out.println("Hello Class " + Solution.class.getName());
+
+		sol.trapObject();
+		//sol.trapRandom();
+		//sol.trapTime();
+	}
+
+}
