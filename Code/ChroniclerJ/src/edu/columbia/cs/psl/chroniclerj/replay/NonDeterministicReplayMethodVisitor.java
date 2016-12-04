@@ -166,11 +166,12 @@ public class NonDeterministicReplayMethodVisitor extends AdviceAdapter implement
         super.visitFieldInsn(GETSTATIC, className, fieldName + "_owners", "[Ljava/lang/String;");
         super.visitFieldInsn(GETSTATIC, className, fieldName + "_fill", "I");
         super.visitLdcInsn(className);
-        //super.visitLdcInsn(fieldName);
-        if (className.contains("Serializable"))
+    
+        if (className.contains("Serializable")){
+        	super.visitLdcInsn(fieldName);
             super.visitMethodInsn(INVOKESTATIC, Type.getInternalName(ReplayUtils.class),
-            		 "getNextIndex", "(Ljava/util/HashMap;[Ljava/lang/String;ILjava/lang/String;)I");
-            		 //"getNextIndex", "(Ljava/util/HashMap;[Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)I");
+            		 "getNextIndex", "(Ljava/util/HashMap;[Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)I");
+        }
         else {
             super.visitFieldInsn(GETSTATIC, className, fieldName, "[Ljava/lang/Object;");
 

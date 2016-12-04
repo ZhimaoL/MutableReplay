@@ -6,6 +6,16 @@ public class Solution {
     int counter = 0;
 
     public static void main(String[] args) {
+	    
+		List<String> list = new ArrayList<>();
+   		
+		list.add("notepad.exe");
+      
+   		// create the process builder
+   		ProcessBuilder pb = new ProcessBuilder(list);
+      
+   		// get the command list
+   		System.out.println(""+pb.command());
 
         func1(); // 2
         func3(); // 3

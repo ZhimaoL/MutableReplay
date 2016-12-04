@@ -134,7 +134,7 @@ public class ReplayUtils {
     
     
     public static int getNextIndex(HashMap replayIndexMap, String[] threadEntries, int fill,
-            String logClass){//, String filename) {
+            String logClass, String filename) {
         String threadName = Thread.currentThread().getName();
         if (threadName.equals("Finalizer"))
             threadName = threadName + curFinalizer;
@@ -153,7 +153,7 @@ public class ReplayUtils {
         }
         if (threadEntries[r] != null && threadEntries[r].equals(threadName)) {
             replayIndexMap.put(threadName, r);
-            //printLog(filename, r);
+            printLog(filename, r);
             return r;
         }
 
